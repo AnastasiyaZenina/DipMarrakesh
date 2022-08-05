@@ -1,4 +1,4 @@
-##*Процедура запуска авто-тестов:*
+## *Процедура запуска авто-тестов:*
 1. Открыть проект в IntelliJ IDEA: склонировать репозиторий https://github.com/AnastasiyaZenina/DipMarrakesh.git
 2. Запустить Docker Desktop
 3. В терминале запустить контейнеры с базами данных командой: docker-compose up
