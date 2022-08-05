@@ -7,14 +7,14 @@ import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
 import org.junit.jupiter.api.*;
 
-import ru.netology.web.data.BdHelper;
+import ru.netology.web.data.DbHelper;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.PaymentPage;
 
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.netology.web.data.BdHelper.cleanDataBase;
+import static ru.netology.web.data.DbHelper.cleanDataBase;
 
 
 public class CreditCardTest {
@@ -45,7 +45,7 @@ public class CreditCardTest {
             val creditCardPage = travelPage.selectBuyByCreditCard();
             creditCardPage.creditCardFullInformation(validCardInformation);
             creditCardPage.approved();
-            assertEquals("APPROVED", BdHelper.getPaymentStatusByCreditCard());
+            assertEquals("APPROVED", DbHelper.getPaymentStatusByCreditCard());
         }
 
         @Test
@@ -55,7 +55,7 @@ public class CreditCardTest {
             val creditCardPage = travelPage.selectBuyByCreditCard();
             creditCardPage.creditCardFullInformation(invalidCardInformation);
             creditCardPage.declined();
-            assertEquals("DECLINED", BdHelper.getPaymentStatusByCreditCard());
+            assertEquals("DECLINED", DbHelper.getPaymentStatusByCreditCard());
         }
     }
 

@@ -6,12 +6,12 @@ import java.sql.SQLException;
 
 import static java.sql.DriverManager.getConnection;
 
-public class BdHelper {
+public class DbHelper {
     private static final String url = System.getProperty("db.url");
     private static final String user = System.getProperty("db.username");
     private static final String password = System.getProperty("db.password");
 
-    public BdHelper() {
+    public DbHelper() {
     }
 
     public static String getPaymentStatusByDebetCard() {
